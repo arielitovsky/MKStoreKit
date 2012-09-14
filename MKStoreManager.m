@@ -218,7 +218,7 @@ static MKStoreManager* _sharedStoreManager;
 {
   return [NSDictionary dictionaryWithContentsOfFile:
           [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:
-           @"MKStoreKitConfigs.plist"]];
+           @"TTStoreKitConfigs.plist"]];
 }
 
 - (void) restorePreviousTransactionsOnComplete:(void (^)(void)) completionBlock
