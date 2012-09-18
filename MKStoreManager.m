@@ -88,17 +88,23 @@ static MKStoreManager* _sharedStoreManager;
   NSDictionary *dict = [iCloudStore dictionaryRepresentation];
   
   [dict enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-    
+      NSLog(@"iCloud stuff:%@", key);
     NSError *error = nil;
     [SFHFKeychainUtils storeUsername:key 
                          andPassword:obj
                       forServiceName:@"MKStoreKit"
                       updateExisting:YES 
                                error:&error];
+      
     
     if(error)
       NSLog(@"%@", [error localizedDescription]);
-  }];    
+  }];
+    if (dict.allKeys.count)
+    {
+        [[NSNotificationCenter defaultCenter] postNotificationName:kMKUpdateiCloudPurchases object:nil];
+    }
+    
 }
 
 +(BOOL) iCloudAvailable {

@@ -49,6 +49,7 @@
 #define kProductFetchedNotification @"MKStoreKitProductsFetched"
 #define kSubscriptionsPurchasedNotification @"MKStoreKitSubscriptionsPurchased"
 #define kSubscriptionsInvalidNotification @"MKStoreKitSubscriptionsInvalid"
+#define kMKUpdateiCloudPurchases @"kMKUpdateiCloudPurchases"
 
 @interface MKStoreManager : NSObject<SKProductsRequestDelegate>
 
